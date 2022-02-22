@@ -1,3 +1,4 @@
+// player
 // var playerName = 'Clank McKrank';
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
@@ -7,9 +8,17 @@ var playerMoney = 10;
 // You can also log multiple values at once like this
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+//enemy robots
+var enemyNames = ["Roborto","Amy Android", "Robo Trumble"];
+//enemyNames array
+for(var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index");
+}
 var enemyHealth = 50;
 var enemyAttack = 12;
+console.log(enemyNames[0]);
 
 // fight function
 var fight = function() {
