@@ -27,7 +27,7 @@ var fightOrSkip = function() {
 
   // if player picks "skip" confirm and then stop the loop
   promptFight = promptFight.toLowerCase();
-  
+
   if (promptFight === "skip") {
     // confirm player wants to skip
     var confirmSkip = window.confirm("Are you sure you'd like to quit?");
@@ -165,19 +165,23 @@ var endGame = function() {
 var shop = function() {
   // ask player what they'd like to do
   var shopOptionPrompt = window.prompt(
-    'Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one "REFILL", "UPGRADE", or "LEAVE" to make a choice.'
+    'Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one "1" for REFILL, "2" for UPGRADE, or "3" for LEAVE to make a choice.'
   );
 
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   // use switch case to carry out action
   switch (shopOptionPrompt) {
+    case 1:
     case 'REFILL':
     case 'refill':
       playerInfo.refillHealth();
       break;
+    case 2:
     case 'UPGRADE':
     case 'upgrade':
       playerInfo.upgradeAttack();
       break;
+    case 3:
     case 'LEAVE':
     case 'leave':
       window.alert('Leaving the store.');
